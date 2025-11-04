@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
   runApp(const DBPeepApp());
@@ -18,7 +17,10 @@ class DBPeepApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const SearchHomePage(),
+      routes: {
+        '/': (context) => const SearchHomePage(),
+      },
+      initialRoute: '/',
     );
   }
 }
